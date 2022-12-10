@@ -91,18 +91,14 @@ function App() {
     await tx.wait()
   }
   
-  
   return (
     <div style={outerContainerStyle}>
       <div style={innerContainerStyle}>
-      <h1>Modular Blog</h1>
-      <h2>Built with Celestia, RollKit, Ethermint, and IPFS</h2>
-      <div style={{marginBottom: 42}}>
-      <text>Connect your Ethereum wallet to begin ✨</text> 
+      <h1>Modular Rollup Blog</h1>
+      <h3>Built with Celestia, RollKit, Ethermint, and IPFS</h3>
+      <p>This blog uses Celestia to provide data availability and consensus, Ethermint and RollKit for execution and settlement, and IPFS for long-term data storage. This allows users to securely create and share blog posts on the blockchain without the need for a centralized server or authority. </p>
       <br />
-      <text>Here is the MetaMask setup for the network (prompting connection in MM isn't working rn on rainbowkit I need to figure out suggesting chainid)</text>
-      <text>Network name: Ethermint, New RPC URL: http://159.65.252.178:8545/, Chain ID: 9000, Currency Symbol: GM</text>
-      </div>
+      <h3 style={{ justifyContent: 'right', textAlign: 'right'}}>Connect your Ethereum wallet to begin ✨</h3>
       <div style={buttonContainerStyle}>
       <ConnectButton />
       </div>
@@ -203,7 +199,7 @@ const buttonContainerStyle = {
   marginTop: 15,
   marginRight: 5,
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'right',
 }
 
 export default App
