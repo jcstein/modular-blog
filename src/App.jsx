@@ -99,7 +99,7 @@ function App() {
       <p>This blog is a <a href="https://celestia.org/glossary/sovereign-rollup" target="_blank">sovereign rollup</a> built on Celestia to provide <a href="https://celestia.org/glossary/data-availability" target="_blank">data availability</a> and <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/" target="_blank">consensus</a>, Ethermint with RollKit for execution, and IPFS for long-term data storage.</p>
       <p>This allows users to securely create and share blog posts on the blockchain without the need for a centralized server or authority.</p>
       <p>If you're looking to dive deep into rollups, check out <a href="https://members.delphidigital.io/reports/the-complete-guide-to-rollups/" target="_blank">The Complete Guide to Rollups</a> by Jon Charbonneau from Delphi Digital.</p>
-      <p>Now, let's get started. First, read the instructions in post <a href="" target="_blank">GMID: 1.</a> (It's titled "gm")</p>
+      <p>Now, let's get started. First, read the instructions in post <a href="https://ipfs.io/ipfs/QmSYDGR8EHEyN1ANcBW6R3aJYQo9EGvom6U9KDtZzfRhKP" target="_blank">GMID: 1.</a> (It's titled "gm")</p>
       <br />
       <h3 style={{ justifyContent: 'right', textAlign: 'right'}}>Connect your Ethereum wallet to begin ✨</h3>
       <div style={buttonContainerStyle}>
