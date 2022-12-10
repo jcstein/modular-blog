@@ -99,6 +99,9 @@ function App() {
       <h2>Built with Celestia, RollKit, Ethermint, and IPFS</h2>
       <div style={{marginBottom: 42}}>
       <text>Connect your Ethereum wallet to begin ✨</text> 
+      <br />
+      <text>Here is the MetaMask setup for the network (prompting connection in MM isn't working rn on rainbowkit I need to figure out suggesting chainid)</text>
+      <text>Network name: Ethermint, New RPC URL: http://159.65.252.178:8545/, Chain ID: 9000, Currency Symbol: GM</text>
       </div>
       <div style={buttonContainerStyle}>
       <ConnectButton />
