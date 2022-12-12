@@ -76,19 +76,6 @@ function App() {
       fetchPosts()
     }
   }
-
-  async function editPost(postId, title, content) {
-    const provider = new ethers.providers.Web3Provider(window.ethereum)
-    const signer = provider.getSigner()
-    const contract = new ethers.Contract(contractAddress, Blog.json.abi, signer)
-  
-    // add the new content to IPFS
-    const added = await client.add(content)
-  
-    // update the post with the new title and content hash
-    const tx = await contract.updatePost(postId, title, added.path, true)
-    await tx.wait()
-  }
   
   return (
     <div style={outerContainerStyle}>
