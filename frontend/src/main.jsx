@@ -1,4 +1,3 @@
-/* src/main.jsx */
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
@@ -18,12 +17,12 @@ import { publicProvider } from 'wagmi/providers/public';
 /* create configuration for Ethermint testnet */
 const ethermint = {
   id: 9000,
-  name: 'Ethermint',
-  network: 'ethermint',
+  name: 'Evmos Testnet',
+  network: 'Evmos Testnet',
   nativeCurrency: {
     decimals: 18,
-    name: 'Ethermint',
-    symbol: 'GM',
+    name: 'Evmos Testnet',
+    symbol: 'tEVMOS',
   },
   rpcUrls: {
     default: 'http://159.65.252.178:8545/'

@@ -1,4 +1,3 @@
-/* src/App.jsx */
 import { useState, useEffect } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ethers } from 'ethers'
