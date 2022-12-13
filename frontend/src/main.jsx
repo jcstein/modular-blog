@@ -52,7 +52,7 @@ const containerStyle = {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <WagmiConfig client={wagmiClient}>
-    <RainbowKitProvider chains={chains}>
+    <RainbowKitProvider chains={chains} initialChain={ethermint}>
       <div style={containerStyle}>
         <App />
       </div>
