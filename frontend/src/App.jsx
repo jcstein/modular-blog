@@ -4,6 +4,7 @@ import { ethers } from 'ethers'
 import { create } from 'ipfs-http-client'
 import { Buffer } from 'buffer'
 import Blog from '../Blog.json'
+import ReactMarkdown from 'react-markdown'
 
 /* configure authorization for Infura and IPFS */
 const auth =
@@ -105,6 +106,9 @@ function App() {
                 <div key={index}>
                   <h2>{post.title}</h2>
                   <button style={{ fontSize: '16px' }} onClick={() => window.open(`https://infura-ipfs.io/ipfs/${post.content}`)}>Read on IPFS</button>
+                  <ReactMarkdown>
+                    {post.postContent}
+                  </ReactMarkdown>
                   <p style={mbidStyle}>GMID: {post.id}</p>
                 </div>
               ))
