@@ -30,7 +30,7 @@ const ethermint = {
   },
   rpcUrls: {
     default: {
-      http: ['http://localhost:8545/'],
+      http: ['http://159.65.252.178:8545/'],
     },
   },
   testnet: true,
@@ -38,7 +38,7 @@ const ethermint = {
 
 // Use code below if using Ethermint and localhost
 const { chains, provider } = configureChains( 
-  [ethermint, chain.localhost],
+  [chain.localhost, ethermint],
   [publicProvider()]
 );
 
