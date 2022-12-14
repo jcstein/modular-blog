@@ -17,7 +17,6 @@ import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { injectedWallet, metaMaskWallet } from '@rainbow-me/rainbowkit/wallets';
 import { connectorsForWallets } from '@rainbow-me/rainbowkit';
 
-
 /* create configuration for Ethermint testnet */
 const ethermint = {
   id: 9000,

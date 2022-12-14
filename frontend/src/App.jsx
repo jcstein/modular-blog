@@ -170,7 +170,6 @@ const postContainerStyle = {
   padding: '1em',
   width: '90%',
   maxWidth: '800px',
-  // center everything
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'start',
