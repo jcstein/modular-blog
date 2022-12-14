@@ -4,7 +4,7 @@ import { ethers } from 'ethers'
 import { create } from 'ipfs-http-client'
 import { Buffer } from 'buffer'
 import Blog from '../Blog.json'
-import ReactMarkdown from 'react-markdown'
+// import ReactMarkdown from 'react-markdown'
 
 /* configure authorization for Infura and IPFS */
 const auth =
@@ -20,7 +20,7 @@ const client = create({
   },
 });
 
-const contractAddress = "0xc1e99a2a791d85433a3693ef267166412ad462eb"
+const contractAddress = "0x879cf1cd1b52c6fdf69167c35ea42a5d8170bcad"
 
 function App() {
   useEffect(() => {
@@ -85,8 +85,7 @@ function App() {
       <h3>Built with <a href="https://celestia.org" target="_blank">Celestia</a>, <a href ="https://docs.celestia.org/developers/rollmint" target="_blank">RollKit</a>, <a href="https://github.com/celestiaorg/ethermint" target="_blank">Ethermint</a>, and <a href="https://ipfs.io" target="_blank">IPFS</a></h3>
       <p>This blog is a <a href="https://celestia.org/glossary/sovereign-rollup" target="_blank">sovereign rollup</a> built on Celestia to provide <a href="https://celestia.org/glossary/data-availability" target="_blank">data availability</a> and <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/" target="_blank">consensus</a>, Ethermint with RollKit for <a href="https://celestia.org/glossary/execution-environment" target="_blank">execution</a>, and IPFS for <a href="https://docs.celestia.org/concepts/data-availability-faq#what-is-the-difference-between-data-availability-and-data-storage" target="_blank">long-term data storage.</a></p>
       <p>This allows users to securely create and share blog posts on the blockchain without the need for a centralized server or authority.</p>
-      <p>If you're looking to dive deep into rollups, check out <a href="https://members.delphidigital.io/reports/the-complete-guide-to-rollups/" target="_blank">The Complete Guide to Rollups</a> by Jon Charbonneau from Delphi Digital.</p>
-      <p>Now, let's get started. First, read the instructions in post <a href="https://ipfs.io/ipfs/QmSYDGR8EHEyN1ANcBW6R3aJYQo9EGvom6U9KDtZzfRhKP" target="_blank">GMID: 1</a>. (You'll need to follow the instructions in GMID: 1 and connect your wallet to see the blog)</p>
+      <p>First, read the instructions in post <a href="https://ipfs.io/ipfs/QmSYDGR8EHEyN1ANcBW6R3aJYQo9EGvom6U9KDtZzfRhKP" target="_blank">GMID: 1</a>. You will need to connect your Ethereum wallet to Ethermint to display the posts from the smart contract.</p>
       <br />
       <h3 style={{ justifyContent: 'right', textAlign: 'right'}}>Connect your Ethereum wallet to begin ✨</h3>
       <div style={buttonContainerStyle}>
@@ -106,9 +105,9 @@ function App() {
                 <div key={index}>
                   <h2>{post.title}</h2>
                   <button style={{ fontSize: '16px' }} onClick={() => window.open(`https://infura-ipfs.io/ipfs/${post.content}`)}>Read on IPFS</button>
-                  <ReactMarkdown>
+                  {/* <ReactMarkdown>
                     {post.postContent}
-                  </ReactMarkdown>
+                  </ReactMarkdown> */}
                   <p style={mbidStyle}>GMID: {post.id}</p>
                 </div>
               ))
