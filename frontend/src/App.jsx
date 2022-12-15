@@ -4,7 +4,7 @@ import { ethers } from 'ethers'
 import { create } from 'ipfs-http-client'
 import { Buffer } from 'buffer'
 import Blog from '../Blog.json'
-// import ReactMarkdown from 'react-markdown'
+import { useAccount } from "wagmi";
 
 /* configure authorization for Infura and IPFS */
 const auth =
@@ -30,6 +30,7 @@ function App() {
   const [posts, setPosts] = useState([])
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
+  const { address } = useAccount();
 
   /* when the component loads, useEffect will call this function */
   async function fetchPosts() {
@@ -85,18 +86,34 @@ function App() {
       <h3>Built with <a href="https://celestia.org" target="_blank">Celestia</a>, <a href ="https://docs.celestia.org/developers/rollmint" target="_blank">RollKit</a>, <a href="https://github.com/celestiaorg/ethermint" target="_blank">Ethermint</a>, and <a href="https://ipfs.io" target="_blank">IPFS</a></h3>
       <p>This blog is a <a href="https://celestia.org/glossary/sovereign-rollup" target="_blank">sovereign rollup</a> built on Celestia to provide <a href="https://celestia.org/glossary/data-availability" target="_blank">data availability</a> and <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/" target="_blank">consensus</a>, Ethermint with RollKit for <a href="https://celestia.org/glossary/execution-environment" target="_blank">execution</a>, and IPFS for <a href="https://docs.celestia.org/concepts/data-availability-faq#what-is-the-difference-between-data-availability-and-data-storage" target="_blank">long-term data storage.</a></p>
       <p>This allows users to securely create and share blog posts on the blockchain without the need for a centralized server or authority.</p>
-      <p>First, read the instructions in post <a href="https://ipfs.io/ipfs/QmSYDGR8EHEyN1ANcBW6R3aJYQo9EGvom6U9KDtZzfRhKP" target="_blank">GMID: 1</a>. You will need to connect your Ethereum wallet to Ethermint to display the posts from the smart contract.</p>
+      <h3>Getting Started</h3>
+      <p>First, you will need to connect your Ethereum wallet to Ethermint to display the posts from the smart contract.</p>
+      <ol>
+        <li>Open your MetaMask wallet and click "Ethereum Mainnet" to open the dropdown.</li>
+        <li>Select "Add network"</li>
+        <li>Select "Add network manually"</li>
+        <li>Enter the following details:</li>
+        <ul>
+          <li>Network Name: `Ethermint`</li>
+          <li>New RPC URL: `http://159.65.252.178:8545/`</li>
+          <li>Chain ID: `69420`</li>
+          <li>Currency Symbol: `CTE`</li>
+        </ul>
+        <li>Connect your wallet to get started!</li>
+      </ol>
       <br />
       <h3 style={{ justifyContent: 'right', textAlign: 'right'}}>Connect your Ethereum wallet to begin ✨</h3>
       <div style={buttonContainerStyle}>
       <ConnectButton />
       </div>
+      {address ? (
       <div style={buttonContainerStyle}>
         <button onClick={() => toggleView('view-posts')} style={buttonStyle}>View Posts</button>
         <button  onClick={() => toggleView('create-post')} style={buttonStyle}>Create Post</button>
       </div>
+      ) : null}
       {
-        viewState === 'view-posts' && (
+        viewState === 'view-posts' && address && (
           <div>
             <div style={postContainerStyle}>
             <h1>Posts</h1>
