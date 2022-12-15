@@ -6,15 +6,15 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import {
   // Comment out line below if using ONLY Ethermint Testnet
-  chain,
+  // chain,
   configureChains,
   createClient,
   WagmiConfig,
 } from 'wagmi';
 // Comment out line below if using ONLY Ethermint Testnet
-// import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
+import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 // Comment out line below if using Ethermint and localhost
-import { publicProvider } from 'wagmi/providers/public';
+// import { publicProvider } from 'wagmi/providers/public';
 import { injectedWallet, metaMaskWallet } from '@rainbow-me/rainbowkit/wallets';
 import { connectorsForWallets } from '@rainbow-me/rainbowkit';
 
@@ -26,7 +26,7 @@ const ethermint = {
   nativeCurrency: {
     decimals: 18,
     name: 'Ethermint',
-    symbol: 'EMINT',
+    symbol: 'CTE',
   },
   rpcUrls: {
     default: {
@@ -37,20 +37,20 @@ const ethermint = {
 };
 
 // Use code below if using Ethermint and localhost
-const { chains, provider } = configureChains( 
-  [chain.localhost, ethermint],
-  [publicProvider()]
-);
+// const { chains, provider } = configureChains( 
+//   [chain.localhost, ethermint],
+//   [publicProvider()]
+// );
 
 // Use code below if using ONLY Ethermint Testnet
-// const { provider, chains } = configureChains(
-//   [ethermint],
-//   [
-//     jsonRpcProvider({
-//       rpc: chain => ({ http: chain.rpcUrls.default.http[0] }),
-//     }),
-//   ]
-// );
+const { provider, chains } = configureChains(
+  [ethermint],
+  [
+    jsonRpcProvider({
+      rpc: chain => ({ http: chain.rpcUrls.default.http[0] }),
+    }),
+  ]
+);
 
 /* DEBUG */
 // const avalancheChain = {
