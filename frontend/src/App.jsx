@@ -140,13 +140,13 @@ function App() {
 }
 
 const outerContainerStyle = {
-  width: '100vw',
+  width: '90vw',
   height: '100vh',
   padding: '50px 0px'
 }
 
 const innerContainerStyle = {
-  width: '90%',
+  width: '100%',
   maxWidth: '800px',
   margin: '0 auto',
 }
@@ -167,7 +167,7 @@ const inputStyle = {
 const postContainerStyle = {
   margin: '0 auto',
   padding: '1em',
-  width: '90%',
+  width: '100%',
   maxWidth: '800px',
   display: 'flex',
   flexDirection: 'column',
