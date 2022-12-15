@@ -86,21 +86,23 @@ function App() {
       <h3>Built with <a href="https://celestia.org" target="_blank">Celestia</a>, <a href ="https://docs.celestia.org/developers/rollmint" target="_blank">RollKit</a>, <a href="https://github.com/celestiaorg/ethermint" target="_blank">Ethermint</a>, and <a href="https://ipfs.io" target="_blank">IPFS</a></h3>
       <p>This blog is a <a href="https://celestia.org/glossary/sovereign-rollup" target="_blank">sovereign rollup</a> built on Celestia to provide <a href="https://celestia.org/glossary/data-availability" target="_blank">data availability</a> and <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/" target="_blank">consensus</a>, Ethermint with RollKit for <a href="https://celestia.org/glossary/execution-environment" target="_blank">execution</a>, and IPFS for <a href="https://docs.celestia.org/concepts/data-availability-faq#what-is-the-difference-between-data-availability-and-data-storage" target="_blank">long-term data storage.</a></p>
       <p>This allows users to securely create and share blog posts on the blockchain without the need for a centralized server or authority.</p>
-      <h3>Getting Started</h3>
-      <p>First, you will need to connect your Ethereum wallet to Ethermint to display the posts from the smart contract.</p>
+      {!address ? (<div>
+        <h3>Getting Started</h3>
+      <p>First, you will need to connect your Ethereum wallet to Ethermint to display the posts from the smart contract and make posts.</p>
       <ol>
         <li>Open your MetaMask wallet and click "Ethereum Mainnet" to open the dropdown.</li>
         <li>Select "Add network"</li>
         <li>Select "Add network manually"</li>
         <li>Enter the following details:</li>
         <ul>
-          <li>Network Name: `Ethermint`</li>
-          <li>New RPC URL: `http://159.65.252.178:8545/`</li>
-          <li>Chain ID: `69420`</li>
-          <li>Currency Symbol: `CTE`</li>
+          <li>Network Name: Ethermint</li>
+          <li>New RPC URL: http://159.65.252.178:8545/</li>
+          <li>Chain ID: 69420</li>
+          <li>Currency Symbol: CTE</li>
         </ul>
         <li>Connect your wallet to get started!</li>
       </ol>
+      </div> ) : null}
       <br />
       <h3 style={{ justifyContent: 'right', textAlign: 'right'}}>Connect your Ethereum wallet to begin ✨</h3>
       <div style={buttonContainerStyle}>
