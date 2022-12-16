@@ -20,7 +20,7 @@ const client = create({
   },
 });
 
-const contractAddress = "0xf781fa338794cc36021f3361a627ad4723477e46"
+const contractAddress = "0x0ff6e6703af0a96839af89db3e5415d44b8ce78d"
 
 function App() {
   useEffect(() => {
