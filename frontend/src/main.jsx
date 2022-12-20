@@ -15,13 +15,13 @@ import { connectorsForWallets } from '@rainbow-me/rainbowkit';
 
 /* create configuration for Ethermint testnet */
 const ethermint = {
-  id: 69420,
+  id: 9000,
   name: 'Ethermint',
   network: 'ethermint',
   nativeCurrency: {
     decimals: 18,
     name: 'Ethermint',
-    symbol: 'CTE',
+    symbol: 'tEVMOS',
   },
   rpcUrls: {
     default: {
