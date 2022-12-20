@@ -5,11 +5,16 @@ import './index.css'
 import '@rainbow-me/rainbowkit/styles.css';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import {
+  // Use line below if using Ethermint & Localhost
+  chain,
   configureChains,
   createClient,
   WagmiConfig,
 } from 'wagmi';
-import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
+// Use line below if using ONLY Ethermint
+// import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
+// Use line below if using Ethermint & Localhost
+import { publicProvider } from 'wagmi/providers/public';
 import { injectedWallet, metaMaskWallet } from '@rainbow-me/rainbowkit/wallets';
 import { connectorsForWallets } from '@rainbow-me/rainbowkit';
 
@@ -21,7 +26,7 @@ const ethermint = {
   nativeCurrency: {
     decimals: 18,
     name: 'Ethermint',
-    symbol: 'tEVMOS',
+    symbol: 'CTE',
   },
   rpcUrls: {
     default: {
@@ -31,14 +36,48 @@ const ethermint = {
   testnet: true,
 };
 
-const { provider, chains } = configureChains(
-  [ethermint],
-  [
-    jsonRpcProvider({
-      rpc: chain => ({ http: chain.rpcUrls.default.http[0] }),
-    }),
-  ]
+// Use code below if using Ethermint and localhost
+const { chains, provider } = configureChains( 
+  [chain.localhost, ethermint],
+  [publicProvider()]
 );
+
+// Use code below if using ONLY Ethermint Testnet
+// const { provider, chains } = configureChains(
+//   [ethermint],
+//   [
+//     jsonRpcProvider({
+//       rpc: chain => ({ http: chain.rpcUrls.default.http[0] }),
+//     }),
+//   ]
+// );
+
+/* DEBUG */
+// const avalancheChain = {
+//   id: 43_114,
+//   name: 'Avalanche',
+//   network: 'avalanche',
+//   nativeCurrency: {
+//     decimals: 18,
+//     name: 'Avalanche',
+//     symbol: 'AVAX',
+//   },
+//   rpcUrls: {
+//     default: {
+//       http: ['https://api.avax.network/ext/bc/C/rpc'],
+//     },
+//   },
+//   testnet: false,
+// };
+
+// const { provider, chains } = configureChains(
+//   [avalancheChain],
+//   [
+//     jsonRpcProvider({
+//       rpc: chain => ({ http: chain.rpcUrls.default.http[0] }),
+//     }),
+//   ]
+// );
 
 const connectors = connectorsForWallets([
   {

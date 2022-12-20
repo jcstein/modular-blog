@@ -161,7 +161,7 @@ function App() {
 const outerContainerStyle = {
   width: '90vw',
   height: '100vh',
-  padding: '50px 0px'
+  padding: '50px 0px',
 }
 
 const innerContainerStyle = {
@@ -186,7 +186,7 @@ const inputStyle = {
 const postContainerStyle = {
   margin: '0 auto',
   padding: '1em',
-  width: '100%',
+  width: '90%',
   maxWidth: '800px',
   display: 'flex',
   flexDirection: 'column',
