@@ -7,3 +7,11 @@ This allows users to securely create and share blog posts on their own modular b
 ## Contracts
 
 There are example contracts and more details in the [contracts README](./contracts/README.md).
+
+## Building the site
+
+To run the site locally:
+
+```sh
+cd frontend && npm install && npm run dev
+```
