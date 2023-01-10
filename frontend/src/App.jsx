@@ -89,19 +89,6 @@ function App() {
       {!address ? (<div>
         <h3>Getting Started</h3>
       <p>First, you will need to connect your Ethereum wallet to Ethermint to display the posts from the smart contract and make posts.</p>
-      <ol>
-        <li>Open your MetaMask wallet and click "Ethereum Mainnet" to open the dropdown.</li>
-        <li>Select "Add network"</li>
-        <li>Select "Add network manually"</li>
-        <li>Enter the following details:</li>
-        <ul>
-          <li>Network Name: Ethermint</li>
-          <li>New RPC URL: http://159.65.252.178:8545/</li>
-          <li>Chain ID: 69420</li>
-          <li>Currency Symbol: CTE</li>
-        </ul>
-        <li>Connect your wallet to get started!</li>
-      </ol>
       </div> ) : null}
       <br />
       <h3 style={{ justifyContent: 'right', textAlign: 'right'}}>Connect your Ethereum wallet to begin ✨</h3>
